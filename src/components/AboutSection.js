@@ -3,34 +3,40 @@ import home1 from "../img/boxer.jpg";
 //Styled
 import styled from "styled-components";
 import { About, Description, Image, Hide } from "../styles";
+//Framer Motion
+import { motion } from "framer-motion";
+import { titleAnim, fade, photoAnim } from "../pages/animation";
+
+import Wave from "./Wave";
 
 const AboutSection = () => {
   return (
     <About>
       <Description>
-        <div className="title">
+        <motion.div>
           <Hide>
-            <h2>
+            <motion.h2 variants={titleAnim}>
               <span>Success</span> usually comes to those
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>
+            <motion.h2 variants={titleAnim}>
               who are too <span>busy</span> to be
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2> looking for it.</h2>
+            <motion.h2 variants={titleAnim}> looking for it.</motion.h2>
           </Hide>
-        </div>
-        <p>
+        </motion.div>
+        <motion.p variants={fade}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, quis.
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="boxer" />
+        <motion.img variants={photoAnim} src={home1} alt="boxer" />
       </Image>
+      <Wave />
     </About>
   );
 };

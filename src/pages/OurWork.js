@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import cardio from "../img/cardio.png";
 import yoga from "../img/yoga.png";
 import weights from "../img/weights.png";
+//Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "./animation";
 
 const OurRoutines = () => {
   return (
-    <Work>
+    <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <Exercise>
         <h2>Cardio</h2>
         <div className="line"></div>
@@ -34,12 +37,13 @@ const OurRoutines = () => {
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
   h2 {
     padding: 1rem 0rem;
+    color: white;
   }
 `;
 const Exercise = styled.div`

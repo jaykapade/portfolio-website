@@ -22,8 +22,8 @@ export const Image = styled.div`
   flex: 1;
   overflow: hidden;
   img {
-    width: 80%;
-    height: 80vh;
+    width: 100%;
+    height: 75vh;
     object-fit: cover;
   }
 `;
