@@ -2,25 +2,18 @@ import React from "react";
 //Styles
 import styled from "styled-components";
 import { About } from "../styles";
+import { AnimateSharedLayout } from "framer-motion";
+//Sections
+import Toggle from "./Toggle";
 
 const FaqSection = () => {
   return (
     <Faq>
       <h2>
-        Any Questions? <span>FAQ</span>
+        <span>FAQs</span>: Any Questions?
       </h2>
-      <div className="question">
-        <h4>How Do i Start?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-            odit.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-        <div className="question">
-          <h4>Daily Schedule</h4>
+      <AnimateSharedLayout>
+        <Toggle title="How Do I Start?">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
@@ -28,10 +21,8 @@ const FaqSection = () => {
               odit.
             </p>
           </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Payment Methods</h4>
+        </Toggle>
+        <Toggle title="Daily Schedule">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
@@ -39,10 +30,8 @@ const FaqSection = () => {
               odit.
             </p>
           </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Products Offered</h4>
+        </Toggle>
+        <Toggle title="Payment Methods">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
@@ -50,36 +39,46 @@ const FaqSection = () => {
               odit.
             </p>
           </div>
-          <div className="faq-line"></div>
-        </div>
-      </div>
+        </Toggle>
+        <Toggle title="Products Offered">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+              odit.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
 
 const Faq = styled(About)`
   display: block;
-  span {
-    display: block;
-  }
+
   h2 {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+    font-weight: bold;
   }
-  font-weight: lighter;
+
+  .question {
+    cursor: pointer;
+    h4 {
+      font-weight: lighter;
+      font-size: 1.75rem;
+    }
+  }
   .faq-line {
     background: #cccccc;
     height: 0.2rem;
     margin: 1.5rem 0rem;
     width: 100%;
   }
-  .question {
-    padding: 2rem 0rem;
-    cursor: pointer;
-  }
   .answer {
     padding: 1.5rem 0rem;
     p {
-      padding: 1rem 0rem;
+      padding: 0.5rem 0rem;
       font-size: 1rem;
     }
   }

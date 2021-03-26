@@ -7,16 +7,18 @@ import yoga from "../img/yoga.png";
 import weights from "../img/weights.png";
 //Animations
 import { motion } from "framer-motion";
-import { pageAnimation } from "./animation";
+import { pageAnimation, fade, photoAnim, lineAnim } from "./animation";
 
 const OurRoutines = () => {
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <Exercise>
-        <h2>Cardio</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>Cardio</motion.h2>
+        <motion.div className="line" variants={lineAnim}></motion.div>
         <Link to="/work/cardio">
-          <img src={cardio} alt="rope" />
+          <Hide>
+            <motion.img variants={photoAnim} src={cardio} alt="rope" />
+          </Hide>
         </Link>
       </Exercise>
       <Exercise>
@@ -49,8 +51,8 @@ const Work = styled(motion.div)`
 const Exercise = styled.div`
   padding-bottom: 10rem;
   .line {
-    height: 0.5rem;
-    background: #ccccc;
+    height: 0.3rem;
+    background: #23d997;
     margin-bottom: 3rem;
   }
   img {
@@ -58,6 +60,10 @@ const Exercise = styled.div`
     height: 100vh;
     object-fit: cover;
   }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
 `;
 
 export default OurRoutines;
