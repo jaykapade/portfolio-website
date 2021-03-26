@@ -28,7 +28,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 ## About the Project
+
 This Project used [React](https://reactjs.org/) ,[Framer Motion](https://www.framer.com/) and [styled Components](https://www.styled-components.com/)
-It is Hosted on Netlify Click [here]() to reach the Site.
-
-
+It is Hosted on Netlify Click [here](https://power-up.netlify.app/) to reach the Site.
